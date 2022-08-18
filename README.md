@@ -26,8 +26,8 @@ A trigger that activates whenever the target object is within a certain radius. 
 The way this trigger is calculates is by getting the difference between the vectors for the positions of the target and the trigger, the we calculate the magnitude of this vector defined by `|c| = sqrt(Σ ci²)`, where `c` is the difference vector, and `ci` is each entry of `c`. If the magnitude is smaller than the radius, the trigger is activated.
 
 <p align="center" >
-  <img width="80%" src="./Assets/Sprites/game-mahts-radiual-trigger.png"/>
-</p> 
+  <img width="80%" src="./Assets/Sprites/game-mahts-radial-trigger.png"/>
+</p>
 
 The resulting C# code is shown below.
 
@@ -48,6 +48,10 @@ bool CheckTrigger()
 A trigger that activates when the target is facing it by a certain angle with a treshhold ranging from 0 to 1. This techinque is commonly used to apply effects os trigger actions when the player is looking at a certain object. A few exemples are any flash grenade in games like Valorant and CS:GO or the quantic objects in Outer Wilds that change their position when the player is not looking. Also, a lot of fighting games where you fight multiple enemies at once, like the Spider-Man 2018 of the Batman Arkham games, the enemies rarely attack the player if the camera is not looking at them.
 
 We can achieve this behaviour by tracing two vectors: the unit vector that goes from the target to the trigger and the unit vector that represents the forward direction of the target. Then we can use the dot product to calculate the angle between the two vectors, or more precisely, the cosine of this angle. This is a number between -1 and 1, where -1 means the target is facing away from the trigger, 1 means the target is facing exactly the trigger and 0 means that the target's line of sight is perpendicular to the direction to the trigger. If the cosine is greater or equal to the treshhold, the trigger is activated. The dot product between two vectros `a` and `b` is defined by `a · b = Σ ai * bi`.
+
+<p align="center" >
+  <img width="80%" src="./Assets/Sprites/game-maths-look-at-trigger.png"/>
+</p>
 
 The corresponding C# code looks like this:
 
