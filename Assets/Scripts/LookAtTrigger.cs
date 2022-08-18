@@ -5,7 +5,7 @@ using UnityEngine;
 public class LookAtTrigger : MonoBehaviour
 {
   [SerializeField] GameObject triggerTarget = null;
-  [Range(0f, 1f)][SerializeField] float treshold = 0.5f;
+  [Range(0f, 1f)][SerializeField] float treshhold = 0.5f;
   [SerializeField] Material standarMaterial = null;
   [SerializeField] Material triggeredMaterial = null;
 
@@ -24,7 +24,7 @@ public class LookAtTrigger : MonoBehaviour
     if (triggerTarget != null)
     {
       float angle = Vector3.Dot(triggerTarget.transform.forward, (transform.position - triggerTarget.transform.position).normalized);
-      if (angle >= treshold)
+      if (angle >= treshhold)
       {
         isTriggered = true;
         meshRenderer.material = triggeredMaterial;

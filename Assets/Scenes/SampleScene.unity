@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTarget: {fileID: 963194225}
-  treshold: 0.9
+  treshhold: 0.95
   standarMaterial: {fileID: 2100000, guid: 36bce9ab6cae8ce43962938466458044, type: 2}
   triggeredMaterial: {fileID: 2100000, guid: 853d20181ae88ba47b1084b10a15569b, type: 2}
 --- !u!1 &41482151
@@ -3530,7 +3530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTarget: {fileID: 963194225}
-  treshold: 0.75
+  treshhold: 0.75
   standarMaterial: {fileID: 2100000, guid: 36bce9ab6cae8ce43962938466458044, type: 2}
   triggeredMaterial: {fileID: 2100000, guid: 853d20181ae88ba47b1084b10a15569b, type: 2}
 --- !u!135 &896090811
@@ -5736,7 +5736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTarget: {fileID: 963194225}
-  treshold: 0.5
+  treshhold: 0.5
   standarMaterial: {fileID: 2100000, guid: 36bce9ab6cae8ce43962938466458044, type: 2}
   triggeredMaterial: {fileID: 2100000, guid: 853d20181ae88ba47b1084b10a15569b, type: 2}
 --- !u!135 &1358207441
