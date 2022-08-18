@@ -8,7 +8,9 @@ public class LookAtTrigger : Trigger
 
   protected override bool CheckTrigger()
   {
-    float angle = Vector3.Dot(triggerTarget.transform.forward, (transform.position - triggerTarget.transform.position).normalized);
+    Vector3 a = triggerTarget.transform.forward;
+    Vector3 b = (transform.position - triggerTarget.transform.position).normalized;
+    float angle = a.x * b.x + a.y * b.y + a.z * b.z;
     return angle >= treshhold;
   }
 
