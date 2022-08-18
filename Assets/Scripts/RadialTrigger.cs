@@ -23,19 +23,23 @@ public class RadialTrigger : MonoBehaviour
   {
     if (triggerTarget != null)
     {
-      Vector3 distanceVector = (transform.position - triggerTarget.transform.position);
-      float distance = Mathf.Sqrt(Mathf.Pow(distanceVector.x, 2) + Mathf.Pow(distanceVector.y, 2) + Mathf.Pow(distanceVector.z, 2));
-      if (distance < radius)
+      isTriggered = CheckTrigger();
+      if (isTriggered)
       {
-        isTriggered = true;
         meshRenderer.material = triggeredMaterial;
       }
       else
       {
-        isTriggered = false;
         meshRenderer.material = standarMaterial;
       }
     }
+  }
+
+  bool CheckTrigger()
+  {
+    Vector3 distanceVector = (transform.position - triggerTarget.transform.position);
+    float distance = Mathf.Sqrt(Mathf.Pow(distanceVector.x, 2) + Mathf.Pow(distanceVector.y, 2) + Mathf.Pow(distanceVector.z, 2));
+    return distance < radius;
   }
 
   void OnDrawGizmosSelected()
