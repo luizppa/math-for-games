@@ -154,7 +154,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &38967043
 MeshRenderer:
@@ -234,9 +234,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTarget: {fileID: 963194225}
-  treshhold: 0.95
   standarMaterial: {fileID: 2100000, guid: 36bce9ab6cae8ce43962938466458044, type: 2}
   triggeredMaterial: {fileID: 2100000, guid: 853d20181ae88ba47b1084b10a15569b, type: 2}
+  treshhold: 0.95
 --- !u!1 &41482151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,9 +3530,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTarget: {fileID: 963194225}
-  treshhold: 0.75
   standarMaterial: {fileID: 2100000, guid: 36bce9ab6cae8ce43962938466458044, type: 2}
   triggeredMaterial: {fileID: 2100000, guid: 853d20181ae88ba47b1084b10a15569b, type: 2}
+  treshhold: 0.75
 --- !u!135 &896090811
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4819,9 +4819,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTarget: {fileID: 972987678}
-  radius: 10
   standarMaterial: {fileID: 2100000, guid: 79f64ed6f5d6d374d91c3a0af4070258, type: 2}
   triggeredMaterial: {fileID: 2100000, guid: 62688512994172f4e8875f5782646346, type: 2}
+  radius: 10
 --- !u!1 &1134454227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5736,9 +5736,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTarget: {fileID: 963194225}
-  treshhold: 0.5
   standarMaterial: {fileID: 2100000, guid: 36bce9ab6cae8ce43962938466458044, type: 2}
   triggeredMaterial: {fileID: 2100000, guid: 853d20181ae88ba47b1084b10a15569b, type: 2}
+  treshhold: 0.5
 --- !u!135 &1358207441
 SphereCollider:
   m_ObjectHideFlags: 0

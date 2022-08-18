@@ -2,44 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAtTrigger : MonoBehaviour
+public class LookAtTrigger : Trigger
 {
-  [SerializeField] GameObject triggerTarget = null;
   [Range(0f, 1f)][SerializeField] float treshhold = 0.5f;
-  [SerializeField] Material standarMaterial = null;
-  [SerializeField] Material triggeredMaterial = null;
 
-  private bool isTriggered = false;
-  private Renderer meshRenderer = null;
-
-  // Start is called before the first frame update
-  void Start()
+  protected override bool CheckTrigger()
   {
-    meshRenderer = GetComponent<Renderer>();
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-    if (triggerTarget != null)
-    {
-      float angle = Vector3.Dot(triggerTarget.transform.forward, (transform.position - triggerTarget.transform.position).normalized);
-      if (angle >= treshhold)
-      {
-        isTriggered = true;
-        meshRenderer.material = triggeredMaterial;
-      }
-      else
-      {
-        isTriggered = false;
-        meshRenderer.material = standarMaterial;
-      }
-    }
+    float angle = Vector3.Dot(triggerTarget.transform.forward, (transform.position - triggerTarget.transform.position).normalized);
+    return angle >= treshhold;
   }
 
   void OnDrawGizmos()
   {
-    if (isTriggered)
+    if (IsTriggered())
     {
       Gizmos.color = Color.blue;
       Gizmos.DrawLine(transform.position, triggerTarget.transform.position);
