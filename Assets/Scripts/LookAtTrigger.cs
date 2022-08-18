@@ -10,8 +10,8 @@ public class LookAtTrigger : Trigger
   {
     Vector3 a = triggerTarget.transform.forward;
     Vector3 b = (transform.position - triggerTarget.transform.position).normalized;
-    float angle = a.x * b.x + a.y * b.y + a.z * b.z;
-    return angle >= treshhold;
+    float cosAngle = a.x * b.x + a.y * b.y + a.z * b.z;
+    return cosAngle >= treshhold;
   }
 
   void OnDrawGizmos()
