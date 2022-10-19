@@ -35,10 +35,10 @@ The resulting C# code is shown below.
 bool CheckTrigger()
 {
   Vector3 distanceVector = (transform.position - triggerTarget.transform.position);
-  float distance = Mathf.Sqrt(Mathf.Pow(distanceVector.x, 2) + Mathf.Pow(distanceVector.y, 2) + Mathf.Pow(distanceVector.z, 2));
-  // We calculate it manually for didactic reasons
+  // We will calculate the distance manually for didactic reasons
   // However, unity has a built-in function for this
   // We could simply use "float distance = distanceVector.magnitude"
+  float distance = Mathf.Sqrt(Mathf.Pow(distanceVector.x, 2) + Mathf.Pow(distanceVector.y, 2) + Mathf.Pow(distanceVector.z, 2));
   return distance < radius;
 }
 ```
@@ -60,10 +60,10 @@ bool CheckTrigger()
 {
   Vector3 a = triggerTarget.transform.forward;
   Vector3 b = (transform.position - triggerTarget.transform.position).normalized;
-  float cosAngle = a.x * b.x + a.y * b.y + a.z * b.z;
   // Much like the magnitude, here we calculate the dot product manually
-  // Hut unity also provides a built-in function for this like so:
-  // "float cosAngle = Vector3.Dot(triggerTarget.transform.forward, (a - b)"
+  // But unity also provides a built-in function for this like so:
+  // "float cosAngle = Vector3.Dot(a, b)"
+  float cosAngle = a.x * b.x + a.y * b.y + a.z * b.z;
   return cosAngle >= treshhold;
 }
 ```
